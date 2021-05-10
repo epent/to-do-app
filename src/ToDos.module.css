@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #F3F0F3;
+}
+
+
+
+/* .ToDos {
+    text-align: center;
+    display: inline;
+} */
+
+.ToDos h3 {
+    background-color: #EF81F2;
+    color: white;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ToDos input {
+    margin: 16px 0 0 40%;
+    border-radius: 8px;
+    border: grey 2px solid;
+    height: 30px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+
+.AddButton {
+    color:#EF81F2;
+    background-color: white;
+    width: 50px;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px grey solid;
+    margin: 0 3px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.AddButton:hover,
+.AddButton:active {
+    color: white;
+    background-color: #EF81F2;
+}
+
+
+
+.DoneButton {
+    color: #57CA6A;
+    background-color: #F3F0F3;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.DoneButton:hover,
+.DoneButton:active {
+    color: #29A73E;
+}
+
+
+
+
+.DeleteButton {
+    color: salmon;
+    background-color: #F3F0F3;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.DeleteButton:hover {
+    color: red;
+}
+
+
+
+.ClearAllButton {
+    color:#EF81F2;
+    background-color: white;
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px grey solid;
+    margin: 10px 0 10px 47%;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ClearAllButton:hover,
+.ClearAllButton:active {
+    color: white;
+    background-color: #EF81F2;
+}
+
+
+
+
+
+
+.ToDo {
+    display: inline-block;
+    margin: 10px 40% 10px 40%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.ToDo li {
+    width: fit-content;
+    vertical-align: middle;
+}
+
+.ToDo button {
+    width: fit-content;
+    vertical-align: middle;
+}
+
+.ToDoDone {
+    display: inline-block;
+    margin: 10px 40% 10px 40%;
+    text-decoration: line-through;
+    color: #949194;
+}
