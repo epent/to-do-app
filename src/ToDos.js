@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import ToDo from './ToDo';
 import styles from './ToDos.module.css';
@@ -62,6 +63,11 @@ const ToDos = () => {
         });
     };
 
+    const saveList = (newList) => {
+        axios.post('https://to-do-app-d5136-default-rtdb.firebaseio.com/lists.json', newList)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+    };
 
     let updatedList = null;
     if (todos.list.length >= 1) {
@@ -75,6 +81,7 @@ const ToDos = () => {
                     number={index + 1}
                     todo={todo.value}
                     itemStyle={itemStyle}
+                    buttonName={todo.itemDone ? 'Undone' : 'Done'}
                     clickDoneButton={() => crossItem(todo.itemDone, todo.id, index)}
                     clickDeleteButton={() => removeItem(todo.id)} />
             </div>
@@ -100,6 +107,10 @@ const ToDos = () => {
             <button
                 className={styles.AddButton}
                 onClick={addNewItem}>Add</button>
+            <button
+                className={styles.SaveButton}
+                onClick={() => saveList(todos.list)}
+            >Save</button>
             {updatedList}
             {clearAllButton}
         </div>

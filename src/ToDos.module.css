@@ -84,7 +84,7 @@ body {
     height: 35px;
     border-radius: 8px;
     border: 2px grey solid;
-    margin: 10px 0 10px 47%;
+    margin: 50px 0 50px 47%;
     font-weight: bold;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -130,4 +130,22 @@ body {
     text-decoration: line-through;
     color: #949194;
     vertical-align: middle;
+}
+
+.SaveButton {
+    color:#EF81F2;
+    background-color: white;
+    width: 50px;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px grey solid;
+    margin: 0 3px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.SaveButton:hover,
+.SaveButton:active {
+    color: white;
+    background-color: #EF81F2;
 }
