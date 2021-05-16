@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import ToDo from './ToDo';
+import ToDo from '../components/ToDo';
+import Spinner from '../components/Spinner';
 import styles from './ToDos.module.css';
 
 
@@ -12,7 +13,8 @@ const ToDos = () => {
             id: '',
             value: '',
             itemDone: false
-        }
+        },
+        loading: false
     });
 
     const updateInput = (event) => {
@@ -64,9 +66,24 @@ const ToDos = () => {
     };
 
     const saveList = (newList) => {
+        setTodos({
+            ...todos,
+            loading: true
+        });
         axios.post('https://to-do-app-d5136-default-rtdb.firebaseio.com/lists.json', newList)
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
+            .then(response => {
+                setTodos({
+                    ...todos,
+                    loading: false,
+                    list: []
+                });
+            })
+            .catch(error => {
+                setTodos({
+                    ...todos,
+                    loading: false
+                });
+            });
     };
 
     let updatedList = null;
@@ -95,6 +112,8 @@ const ToDos = () => {
         >Clear all</button>
         : null;
 
+    const spinner = todos.loading ? <Spinner /> : null;
+
     return (
         <div className={styles.ToDos}>
             <h3>My ToDo List</h3>
@@ -111,6 +130,7 @@ const ToDos = () => {
                 className={styles.SaveButton}
                 onClick={() => saveList(todos.list)}
             >Save</button>
+            {spinner}
             {updatedList}
             {clearAllButton}
         </div>

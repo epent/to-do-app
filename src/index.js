@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ToDos from './ToDos';
+import ToDos from './containers/ToDos';
 
 ReactDOM.render(
     <React.StrictMode>
