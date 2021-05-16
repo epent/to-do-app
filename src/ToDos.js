@@ -9,10 +9,9 @@ const ToDos = () => {
         list: [],
         newItem: {
             id: '',
-            value: ''
-        },
-        itemDone: false,
-        itemDoneId: ''
+            value: '',
+            itemDone: false
+        }
     });
 
     const updateInput = (event) => {
@@ -20,7 +19,8 @@ const ToDos = () => {
             ...todos,
             newItem: {
                 id: 1 + Math.random(),
-                value: event.target.value
+                value: event.target.value,
+                itemDone: false
             }
         });
     };
@@ -43,12 +43,16 @@ const ToDos = () => {
         });
     };
 
-    const crossItem = (prevState, itemId) => {
-        setTodos({
-            ...todos,
-            itemDone: !prevState,
-            itemDoneId: itemId
-        });
+    const crossItem = (prevState, itemId, index) => {
+        const currentList = [...todos.list];
+        const currentToDo = currentList[index];
+        if (currentToDo.id === itemId) {
+            currentToDo.itemDone = !prevState
+            setTodos({
+                ...todos,
+                list: currentList
+            });
+        }
     };
 
     const clearAllItems = () => {
@@ -63,7 +67,7 @@ const ToDos = () => {
     if (todos.list.length >= 1) {
         updatedList = todos.list.map((todo, index) => {
             let itemStyle = styles.ToDo;
-            if (todos.itemDone && todos.itemDoneId === todo.id) { itemStyle = styles.ToDoDone };
+            if (todo.itemDone) { itemStyle = styles.ToDoDone };
 
             return <div>
                 <ToDo
@@ -71,8 +75,8 @@ const ToDos = () => {
                     number={index + 1}
                     todo={todo.value}
                     itemStyle={itemStyle}
-                    clickDoneButton={() => crossItem(todos.itemDone, todo.id)} 
-                    clickDeleteButton={() => removeItem(todo.id)}/>
+                    clickDoneButton={() => crossItem(todo.itemDone, todo.id, index)}
+                    clickDeleteButton={() => removeItem(todo.id)} />
             </div>
         })
     };
