@@ -4,17 +4,32 @@ body {
     background-color: #F3F0F3;
 }
 
-
-
-.ToDos h3 {
+.Header {
     background-color: #EF81F2;
+    width: 100%;
+}
+
+.AppName {
     color: white;
     width: 100%;
     padding: 15px 20px;
-    margin: 0;
     font-weight: bold;
-    text-align: center;
 }
+
+.Navigation_items {
+    text-align: right;
+    vertical-align: middle;
+}
+
+.Navigation_items li {
+    display: inline-block;
+    text-decoration: none;
+    padding: 3px 0;
+    margin: 0 10px;
+    color: white;
+}
+
+
 
 .ToDos input {
     margin: 16px 0 0 40%;

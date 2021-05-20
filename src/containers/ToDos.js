@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import ToDo from '../components/ToDo';
 import Spinner from '../components/Spinner';
@@ -35,6 +36,7 @@ const ToDos = () => {
             ...todos,
             list: currentList
         });
+        console.log(todos)
     };
 
     const removeItem = (itemId) => {
@@ -116,7 +118,15 @@ const ToDos = () => {
 
     return (
         <div className={styles.ToDos}>
-            <h3>My ToDo List</h3>
+            <header className={styles.Header}>
+                <h3 className={styles.AppName}>My ToDo List</h3>
+                <nav>
+                    <ul className={styles.Navigation_items}>
+                        <li><Link to="/mylist">My List</Link></li>
+                        <li><Link to="/auth">Log in</Link></li>
+                    </ul>
+                </nav>
+            </header>
             <input
                 type="text"
                 placeholder="Enter task"

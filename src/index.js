@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import ToDos from './containers/ToDos';
+import MyList from './containers/MyList';
 
 ReactDOM.render(
     <React.StrictMode>
-        <ToDos />
+        <BrowserRouter>
+            <Route path="/mytodos" component={ToDos}/> 
+            <Route path="/mylist" component={MyList}/> 
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );
