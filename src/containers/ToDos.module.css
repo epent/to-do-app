@@ -14,6 +14,7 @@ body {
     width: 100%;
     padding: 15px 20px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .Navigation_items {
@@ -116,9 +117,10 @@ body {
 
 
 .ToDo {
-    margin: 10px 40% 10px 40%;
+    margin: 10px 0 10px 0;
     width: 100%;
     vertical-align: middle;
+    text-align: center;
 }
 
 .ToDo li {
@@ -126,6 +128,7 @@ body {
     vertical-align: middle;
     list-style: none;
     display: inline-block;
+    padding: 8px;
 }
 
 .ToDo button {
@@ -135,9 +138,10 @@ body {
 
 .ToDoDone {
     display: inline-block;
-    margin: 10px 40% 10px 40%;
+    margin: 10px 0 10px 0;
     width: 100%;
     vertical-align: middle;
+    text-align: center;
 }
 
 .ToDoDone li {
@@ -163,5 +167,24 @@ body {
 .SaveButton:active {
     color: white;
     background-color: #EF81F2;
+}
+
+
+
+.MyList {
+    display: inline-block;
+    
+}
+
+.MyList h4 {
+    color: #EF81F2;
+    text-align: center;
+    width: fit-content;
+    margin: 10px 0 10px 35%;
+}
+
+.MyList li {
+    display: inline-block;
+    margin-left: 10px;
 }
 

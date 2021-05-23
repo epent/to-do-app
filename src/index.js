@@ -8,7 +8,7 @@ import MyList from './containers/MyList';
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Route path="/mytodos" component={ToDos}/> 
+            <Route path="/" component={ToDos}/> 
             <Route path="/mylist" component={MyList}/> 
         </BrowserRouter>
     </React.StrictMode>,

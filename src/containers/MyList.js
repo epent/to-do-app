@@ -30,9 +30,6 @@ const MyList = (props) => {
                     lists: fetchedLists,
                     loading: false
                 });
-                if (currentLists.loading === false) {
-                    console.log(currentLists);
-                } //somehow this is not updated
             })
             .catch(error => {
                 setLists({
@@ -40,27 +37,31 @@ const MyList = (props) => {
                     loading: false
                 });
             });
-        if (currentLists.loading === false) {
-            console.log(currentLists);
-        }
-
     }, []);
 
     let updatedLists = <Spinner />;
     if (currentLists.loading === false) updatedLists = currentLists.lists.map((list, index) => {
-        let updatedList = Object.keys(list).map((key) => {
+        let updatedList = Object.keys(list).map((key, index2) => {
             const todo = list[key];
-            return <li key={todo.id}>ToDo: {todo.value}</li>
+
+            let itemStyle = styles.ToDo;
+            if (todo.itemDone) { itemStyle = styles.ToDoDone };
+
+            return todo.value ? <div className={itemStyle}>
+                <li key={todo.id}>ToDo#{index2 + 1}: {todo.value}</li>
+            </div> : null
         });
 
-        return <div key={list.listID} className={styles.ToDo}>
-            <h5>List #{index + 1}</h5>
+        return <div 
+            key={list.listID}
+            className={styles.MyList}>
+            <h4>List #{index + 1}</h4>
             {updatedList}
         </div>
     });
 
     return (
-        <div className={props.itemStyle}>
+        <div>
             {updatedLists}
         </div>
     )

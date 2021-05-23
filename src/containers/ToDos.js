@@ -119,10 +119,10 @@ const ToDos = () => {
     return (
         <div className={styles.ToDos}>
             <header className={styles.Header}>
-                <h3 className={styles.AppName}>My ToDo List</h3>
+                <h3 className={styles.AppName}><Link to="/">My ToDo List</Link></h3>
                 <nav>
                     <ul className={styles.Navigation_items}>
-                        <li><Link to="/mylist">My List</Link></li>
+                        <li><Link to="/mylist">My Lists</Link></li>
                         <li><Link to="/auth">Log in</Link></li>
                     </ul>
                 </nav>
