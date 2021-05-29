@@ -1,8 +1,6 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## To-Do App
+# To-Do App
 This is my first web applicaton, a simple to-do app. 
 
 It was built with React and uses React Router to render different pages. 
