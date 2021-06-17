@@ -5,52 +5,60 @@ body {
 }
 
 .Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #EF81F2;
-    width: 100%;
 }
 
-.AppName {
-    color: white;
-    width: 100%;
-    padding: 15px 20px;
-    font-weight: bold;
+.AppName a{
+    margin-left: 10px;
     text-decoration: none;
+    color: white;
+}
+
+.AppName a:hover{
+    color: #e015e6;
 }
 
 .Navigation_items {
-    text-align: right;
-    vertical-align: middle;
+    list-style: none;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.Navigation_items li {
-    display: inline-block;
+.Navigation_items a{
+    margin: 10px;
     text-decoration: none;
-    padding: 3px 0;
-    margin: 0 10px;
     color: white;
 }
 
+.Navigation_items a:hover{
+    color: #e015e6;
+}
 
 
-.ToDos input {
-    margin: 16px 0 0 40%;
+
+.Control {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Control input{
     border-radius: 8px;
     border: grey 2px solid;
     height: 30px;
     font-family: 'Ubuntu', sans-serif;
 }
 
-
-
-
 .AddButton {
     color:#EF81F2;
     background-color: white;
     width: 50px;
-    height: 35px;
     border-radius: 8px;
     border: 2px grey solid;
-    margin: 0 3px;
     font-weight: bold;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -61,6 +69,49 @@ body {
     background-color: #EF81F2;
 }
 
+.SaveButton {
+    color:#EF81F2;
+    background-color: white;
+    width: 50px;
+    border-radius: 8px;
+    border: 2px grey solid;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.SaveButton:hover,
+.SaveButton:active {
+    color: white;
+    background-color: #EF81F2;
+}
+
+.List {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+.ToDo {
+    margin: 10px 0 10px 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.ToDoDone {
+    margin: 10px 0 10px 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.ToDoDone li {
+    text-decoration: line-through;
+    color: #949194;
+}
+
 
 
 .DoneButton {
@@ -68,7 +119,6 @@ body {
     background-color: #F3F0F3;
     border: none;
     font-family: 'Ubuntu', sans-serif;
-    display: inline-block;
 }
 
 .DoneButton:hover,
@@ -76,21 +126,17 @@ body {
     color: #29A73E;
 }
 
-
-
-
 .DeleteButton {
     color: salmon;
     background-color: #F3F0F3;
     border: none;
     font-family: 'Ubuntu', sans-serif;
-    display: inline-block;
 }
 
-.DeleteButton:hover {
+.DeleteButton:hover,
+.DeleteButton:active {
     color: red;
 }
-
 
 
 .ClearAllButton {
@@ -98,9 +144,9 @@ body {
     background-color: white;
     width: 100px;
     height: 35px;
+    margin-top: 50px;
     border-radius: 8px;
     border: 2px grey solid;
-    margin: 50px 0 50px 47%;
     font-weight: bold;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -112,79 +158,19 @@ body {
 }
 
 
-
-
-
-
-.ToDo {
-    margin: 10px 0 10px 0;
-    width: 100%;
-    vertical-align: middle;
-    text-align: center;
+.MyLists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-
-.ToDo li {
-    width: fit-content;
-    vertical-align: middle;
-    list-style: none;
-    display: inline-block;
-    padding: 8px;
-}
-
-.ToDo button {
-    width: fit-content;
-    vertical-align: middle;
-}
-
-.ToDoDone {
-    display: inline-block;
-    margin: 10px 0 10px 0;
-    width: 100%;
-    vertical-align: middle;
-    text-align: center;
-}
-
-.ToDoDone li {
-    display: inline-block;
-    text-decoration: line-through;
-    color: #949194;
-    vertical-align: middle;
-}
-
-.SaveButton {
-    color:#EF81F2;
-    background-color: white;
-    width: 50px;
-    height: 35px;
-    border-radius: 8px;
-    border: 2px grey solid;
-    margin: 0 3px;
-    font-weight: bold;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.SaveButton:hover,
-.SaveButton:active {
-    color: white;
-    background-color: #EF81F2;
-}
-
-
 
 .MyList {
-    display: inline-block;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 20px 50px 20px;
 }
 
 .MyList h4 {
     color: #EF81F2;
-    text-align: center;
-    width: fit-content;
-    margin: 10px 0 10px 35%;
 }
-
-.MyList li {
-    display: inline-block;
-    margin-left: 10px;
-}
-

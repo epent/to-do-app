@@ -127,22 +127,29 @@ const ToDos = () => {
                     </ul>
                 </nav>
             </header>
-            <input
-                type="text"
-                placeholder="Enter task"
-                value={todos.newItem.value}
-                onChange={updateInput}
-            />
-            <button
-                className={styles.AddButton}
-                onClick={addNewItem}>Add</button>
-            <button
-                className={styles.SaveButton}
-                onClick={() => saveList(todos.list)}
-            >Save</button>
-            {spinner}
-            {updatedList}
-            {clearAllButton}
+            <main>
+                <div className={styles.Control}>
+                    <input
+                        type="text"
+                        placeholder="Enter task"
+                        value={todos.newItem.value}
+                        onChange={updateInput}
+                    />
+                    <button
+                        className={styles.AddButton}
+                        onClick={addNewItem}
+                    >Add</button>
+                    <button
+                        className={styles.SaveButton}
+                        onClick={() => saveList(todos.list)}
+                    >Save</button>
+                </div>
+                <div className={styles.List}>
+                    {spinner}
+                    {updatedList}
+                    {clearAllButton}
+                </div>
+            </main>
         </div>
     );
 };

@@ -61,7 +61,7 @@ const MyList = (props) => {
     });
 
     return (
-        <div>
+        <div className={styles.MyLists}>
             {updatedLists}
         </div>
     )

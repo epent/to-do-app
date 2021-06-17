@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #F3F0F3;
+}
+
+.Header {
+    background-color: #EF81F2;
+    width: 100%;
+}
+
+.AppName {
+    color: white;
+    width: 100%;
+    padding: 15px 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.Navigation_items {
+    text-align: right;
+    vertical-align: middle;
+}
+
+.Navigation_items li {
+    display: inline-block;
+    text-decoration: none;
+    padding: 3px 0;
+    margin: 0 10px;
+    color: white;
+}
+
+
+
+.ToDos input {
+    margin: 16px 0 0 40%;
+    border-radius: 8px;
+    border: grey 2px solid;
+    height: 30px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+
+.AddButton {
+    color:#EF81F2;
+    background-color: white;
+    width: 50px;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px grey solid;
+    margin: 0 3px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.AddButton:hover,
+.AddButton:active {
+    color: white;
+    background-color: #EF81F2;
+}
+
+
+
+.DoneButton {
+    color: #57CA6A;
+    background-color: #F3F0F3;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    display: inline-block;
+}
+
+.DoneButton:hover,
+.DoneButton:active {
+    color: #29A73E;
+}
+
+
+
+
+.DeleteButton {
+    color: salmon;
+    background-color: #F3F0F3;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    display: inline-block;
+}
+
+.DeleteButton:hover {
+    color: red;
+}
+
+
+
+.ClearAllButton {
+    color:#EF81F2;
+    background-color: white;
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px grey solid;
+    margin: 50px 0 50px 47%;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ClearAllButton:hover,
+.ClearAllButton:active {
+    color: white;
+    background-color: #EF81F2;
+}
+
+
+
+
+
+
+.ToDo {
+    margin: 10px 0 10px 0;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.ToDo li {
+    width: fit-content;
+    vertical-align: middle;
+    list-style: none;
+    display: inline-block;
+    padding: 8px;
+}
+
+.ToDo button {
+    width: fit-content;
+    vertical-align: middle;
+}
+
+.ToDoDone {
+    display: inline-block;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.ToDoDone li {
+    display: inline-block;
+    text-decoration: line-through;
+    color: #949194;
+    vertical-align: middle;
+}
+
+.SaveButton {
+    color:#EF81F2;
+    background-color: white;
+    width: 50px;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px grey solid;
+    margin: 0 3px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.SaveButton:hover,
+.SaveButton:active {
+    color: white;
+    background-color: #EF81F2;
+}
+
+
+
+.MyList {
+    display: inline-block;
+    
+}
+
+.MyList h4 {
+    color: #EF81F2;
+    text-align: center;
+    width: fit-content;
+    margin: 10px 0 10px 35%;
+}
+
+.MyList li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
