@@ -1,0 +1,182 @@
+$main-rose-color: #EF81F2;
+@mixin main-button {
+    background-color: white;
+    width: 50px;
+    border-radius: 8px;
+    border: 2px grey solid;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+@mixin done-delete-button {
+    background-color: #F3F0F3;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+@mixin list-item {
+    width: 300px;
+    margin: 10px 0 10px 0;
+    padding: 1rem;
+    list-style: none;
+    box-shadow: 0 2px 8px #ccc;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #F3F0F3;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $main-rose-color;
+}
+
+.AppName {
+    a{
+        margin-left: 10px;
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        color: #e015e6;
+    }
+}
+
+
+
+.Navigation_items {
+    list-style: none;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    a{
+        margin: 10px;
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        color: #e015e6;
+    }
+}
+
+.Control {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    input{
+        border-radius: 8px;
+        border: grey 2px solid;
+        height: 30px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+}
+
+
+
+.AddButton {
+    color:$main-rose-color;
+    @include main-button;
+}
+
+.AddButton:hover,
+.AddButton:active {
+    color: white;
+    background-color: $main-rose-color;
+}
+
+.SaveButton {
+    color:$main-rose-color;
+    @include main-button;
+}
+
+.SaveButton:hover,
+.SaveButton:active {
+    color: white;
+    background-color: $main-rose-color;
+}
+
+
+
+.List {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+.ToDo {
+    @include list-item;
+}
+
+.ToDoDone {
+    @include list-item;
+    li {
+        text-decoration: line-through;
+        color: #949194;
+    }
+}
+
+
+
+.DoneButton {
+    color: #57CA6A;
+    @include done-delete-button;
+}
+
+.DoneButton:hover,
+.DoneButton:active {
+    color: #29A73E;
+}
+
+.DeleteButton {
+    color: salmon;
+    @include done-delete-button;
+}
+
+.DeleteButton:hover,
+.DeleteButton:active {
+    color: red;
+}
+
+
+.ClearAllButton {
+    color:$main-rose-color;
+    @include main-button;
+    width: 100px;
+    height: 35px;
+    margin-top: 50px;
+}
+
+.ClearAllButton:hover,
+.ClearAllButton:active {
+    color: white;
+    background-color: $main-rose-color;
+}
+
+
+.MyLists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.MyList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 20px 50px 20px;
+    h4 {
+        color: $main-rose-color;
+    }
+}

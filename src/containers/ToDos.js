@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 import ToDo from '../components/ToDo';
 import Spinner from '../components/Spinner';
-import styles from './ToDos.module.css';
+import '../todos.css';
+import Menu from '../components/Menu';
 
 
 const ToDos = () => {
@@ -91,8 +92,8 @@ const ToDos = () => {
     let updatedList = null;
     if (todos.list.length >= 1) {
         updatedList = todos.list.map((todo, index) => {
-            let itemStyle = styles.ToDo;
-            if (todo.itemDone) { itemStyle = styles.ToDoDone };
+            let itemStyle = 'ToDo';
+            if (todo.itemDone) { itemStyle = 'ToDoDone' };
 
             return <div>
                 <ToDo
@@ -109,7 +110,7 @@ const ToDos = () => {
 
     const clearAllButton = updatedList ?
         <button
-            className={styles.ClearAllButton}
+            className='ClearAllButton'
             onClick={clearAllItems}
         >Clear all</button>
         : null;
@@ -117,18 +118,19 @@ const ToDos = () => {
     const spinner = todos.loading ? <Spinner /> : null;
 
     return (
-        <div className={styles.ToDos}>
-            <header className={styles.Header}>
-                <h3 className={styles.AppName}><Link to="/">My ToDo List</Link></h3>
+        <div className={'ToDos'}>
+            <header className={'Header'}>
+                <h3 className={'AppName'}><Link to="/">My ToDo List</Link></h3>
                 <nav>
-                    <ul className={styles.Navigation_items}>
+                    <ul className={'Navigation_items'}>
                         <li><Link to="/mylist">My Lists</Link></li>
                         <li><Link to="/auth">Log in</Link></li>
                     </ul>
+                    <Menu />
                 </nav>
             </header>
             <main>
-                <div className={styles.Control}>
+                <div className={'Control'}>
                     <input
                         type="text"
                         placeholder="Enter task"
@@ -136,15 +138,15 @@ const ToDos = () => {
                         onChange={updateInput}
                     />
                     <button
-                        className={styles.AddButton}
+                        className={'AddButton'}
                         onClick={addNewItem}
                     >Add</button>
                     <button
-                        className={styles.SaveButton}
+                        className={'SaveButton'}
                         onClick={() => saveList(todos.list)}
                     >Save</button>
                 </div>
-                <div className={styles.List}>
+                <div className={'List'}>
                     {spinner}
                     {updatedList}
                     {clearAllButton}
