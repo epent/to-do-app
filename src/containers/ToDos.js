@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +9,12 @@ import Menu from '../components/Menu';
 
 
 const ToDos = () => {
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        inputRef.current.focus();
+    }, [])
+
     const [todos, setTodos] = useState({
         list: [],
         newItem: {
@@ -132,6 +138,7 @@ const ToDos = () => {
             <main>
                 <div className={'Control'}>
                     <input
+                        ref={inputRef}
                         type="text"
                         placeholder="Enter task"
                         value={todos.newItem.value}
